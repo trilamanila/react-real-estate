@@ -1,5 +1,4 @@
 import React, { Component} from 'react'
-import ReactDOM from 'react-dom'
 
 export default class Header extends Component {
   constructor () {
@@ -10,7 +9,7 @@ export default class Header extends Component {
   }
   render () {
     return (<header>
-    <div class="logo"> Logo </div>
+    <div className="logo"> Logo </div>
 
     <nav>
       <a href="#">Create Ads</a>
