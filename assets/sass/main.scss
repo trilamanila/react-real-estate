@@ -3,10 +3,12 @@
 @import "reset";
 
 
-body {
+*,
+body,
+html {
   font-family: 'Roboto', sans-serif;
   // background: purple;
 }
 
 @import "listings";
-
+@import "content-area";
