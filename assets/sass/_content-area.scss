@@ -1,7 +1,15 @@
+#content-area {
+    overflow: auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
 #filter {
     background: $grey;
     width: 30%;
-    max-width: 300px;;
+    max-width: 300px;
+    float: left;
+
     .inside {
         padding: 20px;
         max-width: 300px;
@@ -36,10 +44,10 @@
             border-radius: 5px;
             font-size: 1rem;
             padding: 0.4rem;
-            width: 45%;
+            width: 41%;
             display: inline-block;
             margin-right: 2.5%;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         &.extras {
@@ -54,4 +62,222 @@
             }
         }
     }
+}
+
+#listings {
+    width: 69%;
+    float: left;
+    display: inline-block;
+    padding: 4px;
+    background: $offwhite;
+  
+
+    .search-area {
+        input[type="text"] {
+            width: 70%;
+            background: transparent;
+            font-size: 2rem;
+            border: none;
+            border-bottom: 1px solid $darkgrey;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: $lightgrey;
+        }
+    }
+
+    .sortby-area {
+        margin-bottom: 20px;
+
+        .results {
+            color: $darkgrey;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        .sort-options {
+            float: right;
+
+        select {
+            font-size: 0.9rem;
+            font-weight: 300;
+            border: 1px solid $lightgrey;
+            background: transparent;
+            padding: 20px;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: top;
+            }
+
+            .view {
+                display: inline-block;
+
+                .fa {
+                    margin-right: 15px;
+                    font-size: 1.5rem;
+                }
+            }
+        } 
+    }
+    .listings-results {
+        margin-bottom: 60px;
+        
+        .listing {
+            background: #fff;
+            -webkit-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+            -moz-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+            box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+        }
+        .listing-img {
+            color: white;
+            padding: 15px;
+            position: relative;
+            background: url(https://assets.architecturaldesigns.com/plan_assets/324992268/large/23703JD_01_1553616680.jpg?1553616681) no-repeat center center; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            min-height: 200px;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            &:hover {
+                .details {
+                    opacity: 1;
+                }
+                .address {
+                    opacity: 0;
+                }
+            }
+
+            .address {
+                position: absolute;
+                bottom: 20px;
+                opacity: 1;
+                transition: all 0.4s ease-in-out;
+            }
+            .details {
+                transition: all 0.4s ease-in-out;
+                opacity: 0;
+                padding: 35px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                -webkit-border-top-left-radius: 5px;
+                -webkit-border-top-right-radius: 5px;
+                -moz-border-radius-topleft: 5px;
+                -moz-border-radius-topright: 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8930f4+0,b224e5+20,8d30ff+52,8d30ff+52,3e44e0+94 */
+                background: rgba(137,48,244,.8); /* Old browsers */
+                background: -moz-linear-gradient(-45deg, rgba(137,48,244,.8) 0%, rgba(178,36,229,.8) 20%, rgba(141,48,255,.8) 52%, rgba(141,48,255,.8) 52%, rgba(62,68,224,.8) 94%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, rgba(137,48,244,.8) 0%,rgba(178,36,229,.8) 20%,rgba(141,48,255,.8) 52%,rgba(141,48,255,.8) 52%,rgba(62,68,224,.8) 94%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, rgba(137,48,244,.8) 0%,rgba(178,36,229,.8) 20%,rgba(141,48,255,.8) 52%,rgba(141,48,255,.8) 52%,rgba(62,68,224,.8) 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+                .user-img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    display: inline-block;
+                    background: url(https://assets.architecturaldesigns.com/plan_assets/324992268/large/23703JD_01_1553616680.jpg?1553616681) no-repeat center center; 
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+
+                .user-details {
+                    vertical-align: top;
+                    display: inline-block;
+
+                    .user-name {
+                        font-weight: 300;
+                        font-size: 0.9rem;
+                        display: block;
+                        color: rgba(255,255,255, 1);
+                        margin-top: 3px;
+                        margin-bottom: 5px;
+                    }
+
+                    .post-date {
+                        font-size: 0.9rem;
+                        display: block;
+                        color: rgba(255,255,255, .7);
+                    }
+                }
+
+                .listing-details{
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+                
+                    .fa {
+                        display: inline-block;
+                        font-size: 20px;
+                        margin-right: 15px;
+                    }
+
+                    span {
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        position: relative;
+                        top: 3px;
+                    }
+                    .floor-space{
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+        .bottom-info {
+            padding: 20px 15px;
+            .price {
+                font-size: 1rem;
+                display: block;
+                margin-bottom: 10px;
+                color: $darkgrey;
+            }
+
+            .location {
+                font-size: 1.2rem;
+                display: block;
+                color: $lightgrey;
+            }
+        }
+    }
+}
+
+.view-btn {
+    background: black;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 180px;
+    transition: background .3s ease-in-out;
+    position: relative;
+    top: 20px;
+
+    &:hover {
+        background: $pink;
+        cursor: pointer;
+    }
+}
+.col-md-3{
+    width: 23%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 9px;
+}
+.col-md-9{
+    width: 75%;
+    display: inline-block;
 }
