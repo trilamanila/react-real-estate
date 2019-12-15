@@ -122,8 +122,8 @@ var Header = function (_Component) {
               { className: 'title' },
               'Price'
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min-price', onChange: this.props.change, value: '0' }),
-            _react2.default.createElement('input', { type: 'text', name: 'max-price', onChange: this.props.change, value: '10000000' })
+            _react2.default.createElement('input', { type: 'text', name: 'min_price', className: 'min_floor_space', onChange: this.props.change, value: this.props.globalState.min_price }),
+            _react2.default.createElement('input', { type: 'text', name: 'max_price', className: 'max_floor_space', onChange: this.props.change, value: this.props.globalState.max_price })
           ),
           _react2.default.createElement(
             'div',
@@ -133,8 +133,8 @@ var Header = function (_Component) {
               { className: 'title' },
               'Floor Space'
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min-floor-space', onChange: this.props.change, value: '0' }),
-            _react2.default.createElement('input', { type: 'text', name: 'max-floor-space', onChange: this.props.change, value: '50000' })
+            _react2.default.createElement('input', { type: 'text', name: 'min_floor_space', onChange: this.props.change, value: this.props.globalState.min_floor_space }),
+            _react2.default.createElement('input', { type: 'text', name: 'max_floor_space', onChange: this.props.change, value: this.props.globalState.max_floor_space })
           ),
           _react2.default.createElement(
             'div',
@@ -152,7 +152,7 @@ var Header = function (_Component) {
                 null,
                 'Elevators'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'elevators', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'elevator', value: 'elevator', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -162,7 +162,7 @@ var Header = function (_Component) {
                 null,
                 'Swimming Pool'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'swimming-pool', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'swimming_pool', value: 'swimming_pool', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -172,7 +172,7 @@ var Header = function (_Component) {
                 null,
                 'Finished Basement'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'finished basement', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'finished_basement', value: 'finished_basement', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -182,7 +182,7 @@ var Header = function (_Component) {
                 null,
                 'Gym'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'gym', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'gym', value: 'gym', type: 'checkbox', onChange: this.props.change })
             )
           )
         )
@@ -636,7 +636,15 @@ var App = function (_Component) {
 
     _this.state = {
       name: 'Joe',
-      listingsData: _listingsData2.default
+      listingsData: _listingsData2.default,
+      min_price: 0,
+      max_price: 10000000,
+      min_floor_space: 0,
+      max_floor_space: 50000,
+      elavator: false,
+      finished_basement: false,
+      gym: false,
+      swimming_pool: false
     };
     _this.change = _this.change.bind(_this);
     return _this;
@@ -648,7 +656,7 @@ var App = function (_Component) {
       var _this2 = this;
 
       var name = event.target.name;
-      var value = event.target.value;
+      var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
 
       this.setState(_defineProperty({}, name, value), function () {
         console.log(_this2.state);
@@ -664,7 +672,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           'section',
           { id: 'content-area' },
-          _react2.default.createElement(_Filter2.default, { change: this.change }),
+          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
           _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
         )
       );
