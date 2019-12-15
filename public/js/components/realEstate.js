@@ -54,29 +54,64 @@ var Header = function (_Component) {
           ),
           _react2.default.createElement(
             'select',
-            { name: 'neighbourhood', className: 'filters neighbourhood' },
+            { name: 'neighbourhood', className: 'filters neighbourhood', onChange: this.props.change },
             _react2.default.createElement(
               'option',
-              null,
+              { value: 'Ridgewood' },
               'Ridgewood'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Miami' },
+              'Miami'
             )
           ),
           _react2.default.createElement(
             'select',
-            { name: 'housetype', className: 'filters housetype' },
+            { name: 'housetype', className: 'filters housetype', onChange: this.props.change },
             _react2.default.createElement(
               'option',
-              null,
+              { value: 'Ranch' },
               'Ranch'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Apartment' },
+              'Apartment'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Studio' },
+              'Studio'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Room' },
+              'Room'
             )
           ),
           _react2.default.createElement(
             'select',
-            { name: 'bedrooms', className: 'filters bedrooms' },
+            { name: 'bedrooms', className: 'filters bedrooms', onChange: this.props.change },
             _react2.default.createElement(
               'option',
-              null,
+              { value: '1' },
+              '1 BR'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: '2' },
               '2 BR'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: '3' },
+              '3 BR'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: '4' },
+              '4 BR'
             )
           ),
           _react2.default.createElement(
@@ -87,8 +122,8 @@ var Header = function (_Component) {
               { className: 'title' },
               'Price'
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min-price' }),
-            _react2.default.createElement('input', { type: 'text', name: 'max-price' })
+            _react2.default.createElement('input', { type: 'text', name: 'min-price', onChange: this.props.change, value: '0' }),
+            _react2.default.createElement('input', { type: 'text', name: 'max-price', onChange: this.props.change, value: '10000000' })
           ),
           _react2.default.createElement(
             'div',
@@ -98,8 +133,8 @@ var Header = function (_Component) {
               { className: 'title' },
               'Floor Space'
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min-floor-space' }),
-            _react2.default.createElement('input', { type: 'text', name: 'max-floor-space' })
+            _react2.default.createElement('input', { type: 'text', name: 'min-floor-space', onChange: this.props.change, value: '0' }),
+            _react2.default.createElement('input', { type: 'text', name: 'max-floor-space', onChange: this.props.change, value: '50000' })
           ),
           _react2.default.createElement(
             'div',
@@ -117,7 +152,7 @@ var Header = function (_Component) {
                 null,
                 'Elevators'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'elevators', type: 'checkbox' })
+              _react2.default.createElement('input', { name: 'extras', value: 'elevators', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -127,7 +162,7 @@ var Header = function (_Component) {
                 null,
                 'Swimming Pool'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'swimming-pool', type: 'checkbox' })
+              _react2.default.createElement('input', { name: 'extras', value: 'swimming-pool', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -137,7 +172,7 @@ var Header = function (_Component) {
                 null,
                 'Finished Basement'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'finished basement', type: 'checkbox' })
+              _react2.default.createElement('input', { name: 'extras', value: 'finished basement', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -147,7 +182,7 @@ var Header = function (_Component) {
                 null,
                 'Gym'
               ),
-              _react2.default.createElement('input', { name: 'extras', value: 'gym', type: 'checkbox' })
+              _react2.default.createElement('input', { name: 'extras', value: 'gym', type: 'checkbox', onChange: this.props.change })
             )
           )
         )
@@ -583,6 +618,8 @@ var _listingsData2 = _interopRequireDefault(_listingsData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -601,13 +638,25 @@ var App = function (_Component) {
       name: 'Joe',
       listingsData: _listingsData2.default
     };
+    _this.change = _this.change.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
+    key: 'change',
+    value: function change(event) {
+      var _this2 = this;
+
+      var name = event.target.name;
+      var value = event.target.value;
+
+      this.setState(_defineProperty({}, name, value), function () {
+        console.log(_this2.state);
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       return _react2.default.createElement(
         'div',
         null,
@@ -615,7 +664,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           'section',
           { id: 'content-area' },
-          _react2.default.createElement(_Filter2.default, null),
+          _react2.default.createElement(_Filter2.default, { change: this.change }),
           _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
         )
       );
