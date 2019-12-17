@@ -55,6 +55,48 @@ var listingsData = [
         image:
         'https://i.pinimg.com/originals/e2/96/03/e296035866248d8d097c4e138a22c8cc.jpg'
     },
+    {
+        address: '10 William Penn Ct',
+        city: 'Denver',
+        state: 'CO',
+        rooms: 2,
+        price: 4000,
+        floorSpace: 1400, 
+        extras: [
+            'elevator'
+        ],
+        homeType: 'Apartment',
+        image:
+        'https://i.ytimg.com/vi/ONpO_j15FD0/maxresdefault.jpg'
+    },
+    {
+        address: '25 Glasgow Blvd',
+        city: 'Cleveland',
+        state: 'OH',
+        rooms: 2,
+        price: 3000,
+        floorSpace: 1250, 
+        extras: [
+            'elevator'
+        ],
+        homeType: 'Apartment',
+        image:
+        'http://www.idesignarch.com/wp-content/uploads/West-Hampstead-Modern-Flat_2.jpg'
+    },
+    {
+        address: '67 Cecil Ct',
+        city: 'Baltimore',
+        state: 'MD',
+        rooms: 2,
+        price: 3200,
+        floorSpace: 1200, 
+        extras: [
+            'elevator'
+        ],
+        homeType: 'Apartment',
+        image:
+        'https://mms.businesswire.com/media/20170221006392/en/570926/5/The_Westerly_-_Exterior_Rendering.jpg?download=1'
+    },
 ]
 
 export default listingsData;
