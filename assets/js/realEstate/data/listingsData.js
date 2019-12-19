@@ -73,7 +73,7 @@ var listingsData = [
         address: '25 Glasgow Blvd',
         city: 'Cleveland',
         state: 'OH',
-        rooms: 2,
+        rooms: 3,
         price: 3000,
         floorSpace: 1250, 
         extras: [
@@ -87,7 +87,7 @@ var listingsData = [
         address: '67 Cecil Ct',
         city: 'Baltimore',
         state: 'MD',
-        rooms: 2,
+        rooms: 1,
         price: 3200,
         floorSpace: 1200, 
         extras: [
