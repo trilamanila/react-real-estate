@@ -1,11 +1,11 @@
 {
-  "name": "CodingPhase-StarterKit",
+  "name": "Real-Estate-App",
   "version": "1.0.0",
-  "description": "Super Cool Framework",
+  "description": "Real estate app created with react",
   "main": "index.js",
-  "author": "joe santos garcia",
+  "author": "joncin picol",
   "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
+  "homepage": "http://trilamanila.com/",
   "dependencies": {
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
